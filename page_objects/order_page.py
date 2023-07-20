@@ -39,45 +39,45 @@ class OrderPage:
         self.browser = browser
 
     @allure.step('Первый ввод имени')
-    def set_name(self):
+    def set_name(self, first_name):
         self.browser.find_elements(*OrderPageLocators.inputs)[0].send_keys(first_name)
 
     @allure.step('Второй ввод имени')
-    def set_name_2(self):
+    def set_name_2(self, second_name):
         self.browser.find_elements(*OrderPageLocators.inputs)[0].send_keys(second_name)
 
     @allure.step('Первый ввод фамилии')
-    def set_surname(self):
+    def set_surname(self, first_last_name):
         self.browser.find_elements(*OrderPageLocators.inputs)[1].send_keys(first_last_name)
 
     @allure.step('Второй ввод фамилии')
-    def set_surname_2(self):
+    def set_surname_2(self, second_last_name):
         self.browser.find_elements(*OrderPageLocators.inputs)[1].send_keys(second_last_name)
 
     @allure.step('Первый ввод адреса')
-    def set_address(self):
+    def set_address(self, first_adress):
         self.browser.find_elements(*OrderPageLocators.inputs)[2].send_keys(first_adress)
 
     @allure.step('Второй ввод адреса')
-    def set_address_2(self):
+    def set_address_2(self, second_adress):
         self.browser.find_elements(*OrderPageLocators.inputs)[2].send_keys(second_adress)
 
     @allure.step('Ввести станцию метро')
-    def set_metro_station(self):
+    def set_metro_station(self, first_metro_station):
         self.browser.find_element(*OrderPageLocators.metro_station_input).send_keys(first_metro_station)
         self.browser.find_element(*OrderPageLocators.metro_station_row).click()
 
     @allure.step('Ввести вторую станцию метро')
-    def set_metro_station_2(self):
+    def set_metro_station_2(self, second_metro_station):
         self.browser.find_element(*OrderPageLocators.metro_station_input).send_keys(second_metro_station)
         self.browser.find_element(*OrderPageLocators.metro_station_row).click()
 
     @allure.step('Введите номер телефона')
-    def set_phone_number(self):
+    def set_phone_number(self, first_phone_number):
         self.browser.find_elements(*OrderPageLocators.inputs)[3].send_keys(first_phone_number)
 
     @allure.step('Введите второй номер телефона')
-    def set_phone_number_2(self):
+    def set_phone_number_2(self, second_phone_number):
         self.browser.find_elements(*OrderPageLocators.inputs)[3].send_keys(second_phone_number)
 
     @allure.step('Нажать кнопку Далее')
@@ -85,12 +85,12 @@ class OrderPage:
         self.browser.find_element(*OrderPageLocators.next_button).click()
 
     @allure.step('Введите дату')
-    def set_date(self):
+    def set_date(self, first_date):
         self.browser.find_elements(*OrderPageLocators.inputs_second_page)[0].send_keys(first_date)
         self.browser.find_element(*OrderPageLocators.date_picker_selected).click()
 
     @allure.step('Введите вторую дату')
-    def set_date_2(self):
+    def set_date_2(self, second_date):
         self.browser.find_elements(*OrderPageLocators.inputs_second_page)[0].send_keys(second_date)
         self.browser.find_element(*OrderPageLocators.date_picker_selected).click()
 
@@ -113,11 +113,11 @@ class OrderPage:
         self.browser.find_element(*OrderPageLocators.grey_checkbox).click()
 
     @allure.step('Написать комментарий')
-    def set_comment(self):
+    def set_comment(self, first_comment):
         self.browser.find_elements(*OrderPageLocators.inputs_second_page)[1].send_keys(first_comment)
 
     @allure.step('Написать второй комментарий')
-    def set_comment_2(self):
+    def set_comment_2(self, second_comment):
         self.browser.find_elements(*OrderPageLocators.inputs_second_page)[1].send_keys(second_comment)
 
     @allure.step('Нажать кнопку Заказать')
