@@ -7,7 +7,6 @@ from scr.data import (get_first_name, get_second_name, get_first_lastname, get_s
                   get_first_number_telephone, get_second_number_telephone, get_first_date, get_second_date,
                   get_first_comment, get_second_comment)
 
-
 @allure.description('Сценарий заказа Самоката по клику на кнопку "Заказать" наверху страницы')
 @allure.title('Заказ самоката по кнопке "Заказать" наверху страницы')
 # ... (предыдущий код)
