@@ -1,5 +1,4 @@
 import allure
-import pytest
 from page_objects.quistions_page import QuestionsPage
 
 

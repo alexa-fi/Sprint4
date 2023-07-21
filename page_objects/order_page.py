@@ -3,20 +3,20 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 from locators.order_page_locators import OrderPageLocators
-from scr.data import get_first_name
-from scr.data import get_second_lastname
-from scr.data import get_second_name
-from scr.data import get_first_lastname
-from scr.data import get_first_adress
-from scr.data import get_second_adress
-from scr.data import get_first_number_telephone
-from scr.data import get_second_number_telephone
-from scr.data import get_first_metro_station
-from scr.data import get_second_metro_station
-from scr.data import get_first_date
-from scr.data import get_second_date
-from scr.data import get_first_comment
-from scr.data import get_second_comment
+from data import get_first_name
+from data import get_second_lastname
+from data import get_second_name
+from data import get_first_lastname
+from data import get_first_adress
+from data import get_second_adress
+from data import get_first_number_telephone
+from data import get_second_number_telephone
+from data import get_first_metro_station
+from data import get_second_metro_station
+from data import get_first_date
+from data import get_second_date
+from data import get_first_comment
+from data import get_second_comment
 
 first_name = get_first_name()
 second_name = get_second_name()
