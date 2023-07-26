@@ -8,7 +8,6 @@ class TestMainPage:
     @allure.title('Клик на логотип "Яндекс"')
     def test_yandex_logo_click(self, browser):
         main_page = MainPage(browser)
-        browser.get("https://qa-scooter.praktikum-services.ru/")
         main_page.yandex_logo_click()
         assert len(browser.window_handles) == 2
 
@@ -16,6 +15,5 @@ class TestMainPage:
     @allure.title('Клик на лого "Самокат"')
     def test_click_samokat_logo(self, browser):
         main_page = MainPage(browser)
-        browser.get("https://qa-scooter.praktikum-services.ru/order")
         main_page.scooter_logo_click()
         assert browser.current_url == "https://qa-scooter.praktikum-services.ru/"

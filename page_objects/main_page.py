@@ -1,10 +1,9 @@
 import allure
 from locators.main_page_locators import MainPageLocators
+from base_page import BasePage
 
 
-class MainPage:
-    def __init__(self, browser):
-        self.browser = browser
+class MainPage(BasePage):
 
     @allure.step('Клик по логотипу "Яндекс"')
     def yandex_logo_click(self):

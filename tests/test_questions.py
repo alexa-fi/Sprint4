@@ -1,16 +1,19 @@
 import allure
 import pytest
 from page_objects.quistions_page import QuestionsPage
+from page_objects.base_page import BasePage
 
 
-# Test data containing question numbers and their expected answers
 question_data = [
     (1, 'Сутки — 400 рублей. Оплата курьеру — наличными или картой.'),
-    (2, 'Пока что у нас так: один заказ — один самокат. Если хотите покататься с друзьями, можете просто сделать несколько заказов — один за другим.'),
-    (3, 'Допустим, вы оформляете заказ на 8 мая. Мы привозим самокат 8 мая в течение дня. Отсчёт времени аренды начинается с момента, когда вы оплатите заказ курьеру. Если мы привезли самокат 8 мая в 20:30, суточная аренда закончится 9 мая в 20:30.'),
+    (2,
+     'Пока что у нас так: один заказ — один самокат. Если хотите покататься с друзьями, можете просто сделать несколько заказов — один за другим.'),
+    (3,
+     'Допустим, вы оформляете заказ на 8 мая. Мы привозим самокат 8 мая в течение дня. Отсчёт времени аренды начинается с момента, когда вы оплатите заказ курьеру. Если мы привезли самокат 8 мая в 20:30, суточная аренда закончится 9 мая в 20:30.'),
     (4, 'Только начиная с завтрашнего дня. Но скоро станем расторопнее.'),
     (5, 'Пока что нет! Но если что-то срочное — всегда можно позвонить в поддержку по красивому номеру 1010.'),
-    (6, 'Самокат приезжает к вам с полной зарядкой. Этого хватает на восемь суток — даже если будете кататься без передышек и во сне. Зарядка не понадобится.'),
+    (6,
+     'Самокат приезжает к вам с полной зарядкой. Этого хватает на восемь суток — даже если будете кататься без передышек и во сне. Зарядка не понадобится.'),
     (7, 'Да, пока самокат не привезли. Штрафа не будет, объяснительной записки тоже не попросим. Все же свои.'),
     (8, 'Да, обязательно. Всем самокатов! И Москве, и Московской области.')
 ]
@@ -24,27 +27,5 @@ class TestQuestions:
     def test_question(self, browser, question_number, expected_answer):
         browser.get('https://qa-scooter.praktikum-services.ru/')
         questions_page = QuestionsPage(browser)
-        if question_number == 1:
-            questions_page.click_first_question()
-            assert questions_page.get_first_answer() == expected_answer
-        elif question_number == 2:
-            questions_page.click_second_question()
-            assert questions_page.get_second_answer() == expected_answer
-        elif question_number == 3:
-            questions_page.click_third_question()
-            assert questions_page.get_third_answer() == expected_answer
-        elif question_number == 4:
-            questions_page.click_fourth_question()
-            assert questions_page.get_fourth_answer() == expected_answer
-        elif question_number == 5:
-            questions_page.click_fifth_question()
-            assert questions_page.get_fifth_answer() == expected_answer
-        elif question_number == 6:
-            questions_page.click_sixth_question()
-            assert questions_page.get_sixth_answer() == expected_answer
-        elif question_number == 7:
-            questions_page.click_seventh_question()
-            assert questions_page.get_seventh_answer() == expected_answer
-        elif question_number == 8:
-            questions_page.click_eighth_question()
-            assert questions_page.get_eighth_answer() == expected_answer
+        questions_page.click_question(question_number)
+        assert questions_page.get_answer() == expected_answer
