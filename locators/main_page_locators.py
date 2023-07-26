@@ -2,7 +2,6 @@ from selenium.webdriver.common.by import By
 
 
 class MainPageLocators:
-
     yandex_logo = [By.XPATH, '//*[contains(@class, "Header_LogoYandex")]']
     scooter_logo = [By.XPATH, '//*[contains(@class, "Header_LogoScooter")]']
     order_button = [By.XPATH, '//*[contains(@class, "Button_Button")]']
@@ -25,3 +24,5 @@ class MainPageLocators:
     sixth_answer = [By.ID, 'accordion__panel-5']
     seventh_answer = [By.ID, 'accordion__panel-6']
     eight_answer = [By.ID, 'accordion__panel-7']
+    question_locator = (By.XPATH, "//div[@class='faq-item']")
+    answer_locator = (By.XPATH, "//div[@class='faq-item__desc']")

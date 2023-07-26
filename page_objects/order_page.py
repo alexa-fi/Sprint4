@@ -74,11 +74,11 @@ class OrderPage:
 
     @allure.step('Введите номер телефона')
     def set_phone_number(self, first_phone_number):
-        self.browser.find_elements(*OrderPageLocators.inputs)[3].send_keys(first_phone_number)
+        self.browser.find_elements(*OrderPageLocators.input_phone_locator).send_keys(first_phone_number)
 
     @allure.step('Введите второй номер телефона')
     def set_phone_number_2(self, second_phone_number):
-        self.browser.find_elements(*OrderPageLocators.inputs)[3].send_keys(second_phone_number)
+        self.browser.find_elements(*OrderPageLocators.input_phone_locator)[3].send_keys(second_phone_number)
 
     @allure.step('Нажать кнопку Далее')
     def click_next_button(self):
